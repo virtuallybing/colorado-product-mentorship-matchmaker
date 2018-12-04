@@ -26,6 +26,14 @@ class StableMarriageMatchmaker
       @proposals = []
     end
 
+    def id
+      @person.id
+    end
+
+    def name
+      @person.name
+    end
+
     def free
       @match = nil
     end
@@ -44,7 +52,7 @@ class StableMarriageMatchmaker
     end
    
     def propose_to participation
-      @proposals << participation
+      @proposals << participation.id
       participation.respond_to_proposal_from(self)
     end
    
@@ -58,16 +66,12 @@ class StableMarriageMatchmaker
     end
 
     def rank participation
-      @person.preferences.find_by(preferred_person_id: participation.person.id).rank
+      @person.rank_of(participation.person.id)
     end
 
     def next_participation participations
-      preference = @person.preferences.order(rank: :asc).find do |preference|
-        participation = participations.find { |participation| participation.person.id == preference.preferred_person_id }
-        not @proposals.include?(participation)
-      end
-
-      participations.find { |participation| participation.person.id == preference.preferred_person_id }     
+      potential_participations = participations.reject { |participantion| @proposals.include?(participantion.id) }
+      potential_participations.sort_by { |participation| rank(participation) }.first
     end
   end
 end
