@@ -43,8 +43,11 @@ POOL_TWO = [
 describe StableMarriageMatchmaker, "#match_couples" do
   it "correctly matches up participants" do
     matchmaker = StableMarriageMatchmaker.new(POOL_ONE, POOL_TWO)
+    couples = matchmaker.run.map do |coupling|
+      [ coupling[:primary].name, coupling[:secondary].name ]
+    end
 
-    expect(matchmaker.match_couples).to eq(
+    expect(couples).to eq(
       [
         ['Abe', 'Ivy'],
         ['Bob', 'Cathy'],
