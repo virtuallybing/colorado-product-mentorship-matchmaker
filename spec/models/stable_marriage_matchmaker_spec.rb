@@ -24,20 +24,20 @@ POOL_ONE = [
   TestParticipant.new('Gavin', %w[Geraldine Eve Ivy Betty Cathy Abbi Dee Hope Jan Fay]),
   TestParticipant.new('Hal', %w[Abbi Eve Hope Fay Ivy Cathy Jan Betty Geraldine Dee]),
   TestParticipant.new('Ian', %w[Hope Cathy Dee Geraldine Betty Abbi Fay Ivy Jan Eve]),
-  TestParticipant.new('jon', %w[Abbi Fay Jan Geraldine Eve Betty Dee Cathy Ivy Hope]),
+  TestParticipant.new('Jon', %w[Abbi Fay Jan Geraldine Eve Betty Dee Cathy Ivy Hope]),
 ]
 
 POOL_TWO = [
-  TestParticipant.new('Abbi', %w[Bob Fred jon Gavin Ian Abe Dan Ed Col Hal]),
-  TestParticipant.new('Betty', %w[Bob Abe Col Fred Gavin Dan Ian Ed jon Hal]),
-  TestParticipant.new('Cathy', %w[Fred Bob Ed Gavin Hal Col Ian Abe Dan jon]),
-  TestParticipant.new('Dee', %w[Fred jon Col Abe Ian Hal Gavin Dan Bob Ed]),
-  TestParticipant.new('Eve', %w[jon Hal Fred Dan Abe Gavin Col Ed Ian Bob]),
-  TestParticipant.new('Fay', %w[Bob Abe Ed Ian jon Dan Fred Gavin Col Hal]),
-  TestParticipant.new('Geraldine', %w[jon Gavin Hal Fred Bob Abe Col Ed Dan Ian]),
-  TestParticipant.new('Hope', %w[Gavin jon Bob Abe Ian Dan Hal Ed Col Fred]),
-  TestParticipant.new('Ivy', %w[Ian Col Hal Gavin Fred Bob Abe Ed jon Dan]),
-  TestParticipant.new('Jan', %w[Ed Hal Gavin Abe Bob jon Col Ian Fred Dan]),
+  TestParticipant.new('Abbi', %w[Bob Fred Jon Gavin Ian Abe Dan Ed Col Hal]),
+  TestParticipant.new('Betty', %w[Bob Abe Col Fred Gavin Dan Ian Ed Jon Hal]),
+  TestParticipant.new('Cathy', %w[Fred Bob Ed Gavin Hal Col Ian Abe Dan Jon]),
+  TestParticipant.new('Dee', %w[Fred Jon Col Abe Ian Hal Gavin Dan Bob Ed]),
+  TestParticipant.new('Eve', %w[Jon Hal Fred Dan Abe Gavin Col Ed Ian Bob]),
+  TestParticipant.new('Fay', %w[Bob Abe Ed Ian Jon Dan Fred Gavin Col Hal]),
+  TestParticipant.new('Geraldine', %w[Jon Gavin Hal Fred Bob Abe Col Ed Dan Ian]),
+  TestParticipant.new('Hope', %w[Gavin Jon Bob Abe Ian Dan Hal Ed Col Fred]),
+  TestParticipant.new('Ivy', %w[Ian Col Hal Gavin Fred Bob Abe Ed Jon Dan]),
+  TestParticipant.new('Jan', %w[Ed Hal Gavin Abe Bob Jon Col Ian Fred Dan]),
 ]
 
 describe StableMarriageMatchmaker, "#match_couples" do
@@ -58,7 +58,7 @@ describe StableMarriageMatchmaker, "#match_couples" do
         ['Gavin', 'Geraldine'],
         ['Hal', 'Eve'],
         ['Ian', 'Hope'],
-        ['jon', 'Abbi'],
+        ['Jon', 'Abbi'],
       ]
     )
   end
